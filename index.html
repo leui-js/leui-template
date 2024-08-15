@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8"/>
+	<link rel="icon" href="/favicon.ico"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>乐信OA</title>
+	<link rel="stylesheet" type="text/css" href="/loader.css"/>
+</head>
+
+<body>
+<div id="app">
+	<div id="loading-bg">
+		<div class="loading-logo">
+			<!-- SVG Logo -->
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 362 108" width="108"
+			     height="29">
+				<title>LeHR</title>
+				<style>
+          tspan {white-space: pre}
+          .green {fill: #56ca00;}
+          .blue {fill: #16b1ff;}
+          .yellow {fill: #ffb400;}
+          .red {fill: #ff4c51;}
+          .text {font-size: 145px;font-weight: 600;font-family: "PingFang SC", serif}
+				</style>
+				<text id="LeHR" style="transform: matrix(1,0,0,1,176.117,104.395)">
+					<tspan x="-187.9" y="0" class="text green">L</tspan>
+					<tspan y="0" class="text blue">e</tspan>
+					<tspan y="0" class="text yellow">H</tspan>
+					<tspan y="0" class="text red">R</tspan>
+				</text>
+			</svg>
+
+
+		</div>
+		<div class=" loading">
+			<div class="effect-1 effects"></div>
+			<div class="effect-2 effects"></div>
+			<div class="effect-3 effects"></div>
+		</div>
+	</div>
+
+</div>
+<script type="module" src="/src/main.ts"></script>
+<script>
+  const loaderColor = localStorage.getItem('leui-initial-loader-bg') || '#FFFFFF'
+  const primaryColor = localStorage.getItem('leui-initial-loader-color') || '#A169FF'
+
+    if (loaderColor)
+      document.documentElement.style.setProperty('--initial-loader-bg', loaderColor)
+    if (loaderColor)
+      document.documentElement.style.setProperty('--initial-loader-bg', loaderColor)
+
+    if (primaryColor)
+      document.documentElement.style.setProperty('--initial-loader-color', primaryColor)
+  </script>
+</body>
+
+</html>
