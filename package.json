@@ -1,5 +1,5 @@
 {
-  "name": "<%= projectName %>",
+  "name": "le-ui-template",
   "version": "3.0.0",
   "private": true,
   "type": "module",
