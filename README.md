@@ -1,9 +1,12 @@
 # LeUI 模板
 
-[![Node.js Version](https://img.shields.io/badge/node.js-=_18.20.3-green.svg?style=flat-square)](https://www.npmjs.org/package/commander)
-![Vue 3.4](https://img.shields.io/badge/vue-3.4.31-42b883?style=flat&logo=vue.js)
-![Vite 5.3](https://img.shields.io/badge/vite-v5.3.3-blue)
-![vite@5.3.3](https://img.shields.io/badge/vite-v5.3.3-brightgreen)
+<p align="center">
+<img alt="Node.js Version" src="https://img.shields.io/badge/node.js-=_18.20.3-green.svg?style=flat-square" />
+<img alt="Vue 3.4" src="https://img.shields.io/badge/vue-3.4.31-42b883?style=flat&logo=vue.js" />
+<img alt="Vite 5.3" src="https://img.shields.io/badge/vite-v5.3.3-blue" />
+<img alt="vite@5.3.3" src="https://img.shields.io/badge/vite-v5.3.3-brightgreen" />
+</p>
+
 
 这个模板可以帮助你开始在 Vite 中使用 Vue 3 进行开发
 
