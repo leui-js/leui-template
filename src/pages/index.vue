@@ -2,24 +2,23 @@
   <div>
     <VCard
       class="mb-6"
-      title="Kick start your project 🚀"
+      title="奔跑吧 LeUI 项目 🚀"
     >
       <VCardText>All the best for your new project.</VCardText>
       <VCardText>
-        Please make sure to read our <a
-          href="https://JooTang.cn"
+        动手之前，请务必阅读我们的 <a
+          href="//ledocs.oa.fenqile.com/desktop/folder/FOLDER58c4b571d72af55265094ecf5755ecc4"
           target="_blank"
           rel="noopener noreferrer"
           class="text-decoration-none"
         >
-          Template Documentation
-        </a> to understand where to go from here and how to use our template.
+        LeUI 开发者文档
+        </a> 了解如何使用 LeUI 模板快速开发业务需求
       </VCardText>
     </VCard>
 
-    <VCard title="Want to integrate JWT? 🔒">
-      <VCardText>We carefully crafted JWT flow so you can implement JWT with ease and with minimum efforts.</VCardText>
-      <VCardText>Please read our  JWT Documentation to get more out of JWT authentication.</VCardText>
+    <VCard title="功能介绍 ">
+      <VCardText> todo </VCardText>
     </VCard>
   </div>
 </template>

@@ -1,11 +1,11 @@
 export default [
   {
-    title: 'Home',
+    title: '首页',
     to: { name: 'root' },
     icon: { icon: 'ri-home-smile-line' },
   },
   {
-    title: 'Second page',
+    title: '内页',
     to: { name: 'second-page' },
     icon: { icon: 'ri-file-text-line' },
   },
