@@ -10,8 +10,7 @@ import VueDevTools from 'vite-plugin-vue-devtools'
 import Layouts from 'vite-plugin-vue-layouts'
 import vuetify from 'vite-plugin-vuetify'
 import svgLoader from 'vite-svg-loader'
-import path from 'path'
-import fs from 'fs'
+import leUIPlugin from './leUIPlugin'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -20,11 +19,9 @@ export default defineConfig({
   server: {
     port: 3000,
     host: '<%= domain %>',
-    https: {
-      key: fs.readFileSync(path.resolve(__dirname, 'dev-server/key.pem')),
-      cert: fs.readFileSync(path.resolve(__dirname, 'dev-server/cert.pem'))
-    },
+    origin: 'https://<%= domain %>',
   },
+
   plugins: [
     // Docs: https://github.com/posva/unplugin-vue-router
     // ℹ️ This plugin should be placed before vue plugin
@@ -89,6 +86,8 @@ export default defineConfig({
     }),
 
     svgLoader(),
+
+    leUIPlugin(),
   ],
   define: { 'process.env': {} },
   resolve: {
