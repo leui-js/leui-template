@@ -7,8 +7,13 @@
 <img alt="vite@5.3.3" src="https://img.shields.io/badge/vite-v5.3.3-brightgreen" />
 </p>
 
+请使用 LeUI 脚手架创建本项目
 
-这个模板可以帮助你开始在 Vite 中使用 Vue 3 进行开发
+### 推荐开发环境：
+1. [ ] Node.js 18.20.3
+2. [ ] Webstorm or VSCode LTS 版本
+3. [ ] Vue 3.4.31
+4. [ ] Vite 5.3.3
 
 ## 推荐的 IDE 设置
 
