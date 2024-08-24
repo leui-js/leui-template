@@ -13,7 +13,7 @@ import svgLoader from 'vite-svg-loader'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '<%= projectName %>',
+  base: '/<%= projectName %>',
 
   server: {
     port: 3000,
