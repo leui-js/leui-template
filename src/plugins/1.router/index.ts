@@ -4,6 +4,7 @@ import { setupLayouts } from 'virtual:generated-layouts'
 import type { RouteRecordRaw } from 'vue-router/auto'
 // eslint-disable-next-line import/no-unresolved
 import { createRouter, createWebHistory } from 'vue-router/auto'
+import { isUserLoggedIn } from '@/plugins/1.router/oa-login'
 
 function recursiveLayouts(route: RouteRecordRaw): RouteRecordRaw {
   if (route.children) {
@@ -29,9 +30,22 @@ const router = createRouter({
   ],
 })
 
+/**
+ * Docs: https://router.vuejs.org/guide/advanced/navigation-guards.html#global-before-guards
+ * 检查是否 *.oa.fenqile.com
+ */
+if (location.hostname.endsWith('.oa.fenqile.com')) {
+  // 检查是否登录
+  router.beforeEach(async (to, from, next) => {
+    if (await isUserLoggedIn())
+      next()
+    else
+      next({ name: 'Login' })
+  })
+}
+
 export { router }
 
 export default function (app: App) {
-  debugger
   app.use(router)
 }

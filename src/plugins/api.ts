@@ -28,7 +28,6 @@ export const oaAPI = new Proxy(apiList, {
 
 export const checkLogin = async () => {
   try {
-    debugger
     const { mid, min } = await axios.get(oaAPI.session).then(fetchFirstItem)
 
     localStorage.setItem('mid', mid)
