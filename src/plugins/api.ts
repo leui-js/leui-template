@@ -26,6 +26,12 @@ export const oaAPI = new Proxy(apiList, {
   },
 })
 
+export const fetchFirstItem = (rawResponse: AxiosResponse) => {
+  const { data: rows } = rawResponse
+  return rows[0]
+}
+
+
 export const checkLogin = async () => {
   try {
     const { mid, min } = await axios.get(oaAPI.session).then(fetchFirstItem)
@@ -38,12 +44,6 @@ export const checkLogin = async () => {
   catch (e) {
     console.error('请求API失败', e)
   }
-}
-
-
-export const fetchFirstItem = (rawResponse: AxiosResponse) => {
-  const { data: rows } = rawResponse
-  return rows[0]
 }
 
 
