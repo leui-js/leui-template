@@ -5,6 +5,7 @@ import { VBtn } from 'vuetify/components/VBtn'
 import defaults from './defaults'
 import { icons } from './icons'
 import { staticPrimaryColor, staticPrimaryDarkenColor, themes } from './theme'
+import { zhHans } from 'vuetify/lib/locale/index.mjs'
 
 // Styles
 import { cookieRef } from '@/@layouts/stores/config'
@@ -39,6 +40,10 @@ export default function (app: App) {
     defaults,
     icons,
     theme: optionTheme,
+    locale: {
+      locale: 'zhHans',
+      messages: { zhHans },
+    },
 
   })
 
