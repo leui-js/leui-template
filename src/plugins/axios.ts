@@ -1,3 +1,4 @@
+import type { AxiosResponse } from 'axios'
 import axios from 'axios'
 
 const baseURL = '//openmoa.oa.fenqile.com/oa/'
@@ -8,18 +9,20 @@ export interface ResultRow {
   [key: string]: string | number | boolean | string[]
 }
 
-interface APIResponseData {
+interface OAResponseData {
   retcode: number
   retmsg: string
   result_rows: ResultRow[]
 }
+
+type ResData = OAResponseData | ResultRow[]
 
 enum API_RET_CODES {
   notLogin = 19002028,
   success = 0,
 }
 
-export  const axiosIns = axios.create({
+export const axiosIns = axios.create({
   baseURL,
   timeout: 0,
   withCredentials: true,
@@ -37,14 +40,14 @@ const onLoginFail = (code: number, msg: string) => {
 }
 
 // ℹ️ Add response interceptor to handle 40x response
-axiosIns.interceptors.response.use(response => {
+axiosIns.interceptors.response.use((response: AxiosResponse<ResData, any>) => {
   try {
-    const respData = response.data as APIResponseData
+    const respData = response.data as OAResponseData
     const { retcode, retmsg, result_rows: resRows } = respData
     const code = Number(retcode)
     if (code === API_RET_CODES.success) {
-      // 这里修改为返回整个response，并在data属性上放置处理后的数据
-      response.data = resRows
+      // 这里强行修改 response.data 属性,上放置处理后的数据
+      response.data = resRows as ResultRow[]
 
       return response
     }
@@ -58,7 +61,7 @@ axiosIns.interceptors.response.use(response => {
     return Promise.reject(e)
   }
 },
-error => {
+(error: any) => {
   // Handle error
   if (error?.response?.status > 400) {
     // Remove "mid" from localStorage
