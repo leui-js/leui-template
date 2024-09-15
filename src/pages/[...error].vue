@@ -21,7 +21,7 @@ definePage({
     <ErrorHeader
       status-code="404"
       title="页面访问异常 ⚠️"
-      description="如需帮忙，请联系 LeOA 团队"
+      description="如需帮助，请联系 LeOA 团队"
       class="mb-10"
     />
 
@@ -30,7 +30,7 @@ definePage({
       <VImg
         :src="misc404"
         alt="Coming Soon"
-        :max-width="800"
+        :max-width="500"
         class="mx-auto"
       />
       <VBtn
