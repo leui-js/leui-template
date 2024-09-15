@@ -1,12 +1,10 @@
 <script setup lang="ts">
-import  { oaAPI,fetchFirstItem} from '@/plugins/api'
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
+import { fetchFirstItem, oaAPI } from '@/plugins/api'
 import { axiosIns as axios } from '@axios'
-// import _axios from '@axios'
 
 import defaultAvatar from '@images/avatars/avatar-1.png'
-
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
-import avatar1 from '@images/avatars/avatar-1.png'
+/* eslint-disable camelcase */
 
 const userAvatar = ref(defaultAvatar)
 const userPosition = ref('乐信员工')
@@ -17,62 +15,45 @@ const fetchAvatar = () => {
   // 请求头像
   axios.post(oaAPI.basicInfo, { user_min_list: [userID] })
     .then(fetchFirstItem)
-    .then(( { thumb_avatar }) => {
+    .then(({ thumb_avatar }) => {
       userAvatar.value = thumb_avatar
     })
-    .catch((err) => {
+    .catch(err => {
       console.log(err)
     })
 }
 
 const fetchPosition = () => {
-
   axios.get(oaAPI.hrInfo, { params: { user_min: userID } })
     .then(fetchFirstItem)
     .then(({ manager_position_desc, professional_position_desc, job_sub_category_desc }) => {
-      userPosition.value = `${job_sub_category_desc}${manager_position_desc || professional_position_desc}`
+      userPosition.value
+        = `${job_sub_category_desc}${manager_position_desc || professional_position_desc}`
     })
-    .catch((err) => {
+    .catch(err => {
       console.log(err)
-    })}
+    })
+}
 
 onMounted(() => {
-
   if (userID) {
     fetchAvatar()
     fetchPosition()
   }
-
 })
 
 const userProfileList = [
   { type: 'divider' },
-  // {
-  //   type: 'navItem',
-  //   icon: 'ri-user-line',
-  //   title: 'Profile',
-  //   value: 'profile',
-  // },
+
   {
     type: 'navItem',
     icon: 'ri-settings-4-line',
     title: '设置',
     value: 'settings',
   },
-  // {
-  //   type: 'navItem',
-  //   icon: 'ri-file-text-line',
-  //   title: 'Billing Plan',
-  //   value: 'billing',
-  //   badgeProps: { color: 'error', content: '4' },
-  // },
+
   { type: 'divider' },
-  // {
-  //   type: 'navItem',
-  //   icon: 'ri-money-dollar-circle-line',
-  //   title: 'Pricing',
-  //   value: 'pricing',
-  // },
+
   {
     type: 'navItem',
     icon: 'ri-question-line',
@@ -82,6 +63,13 @@ const userProfileList = [
   { type: 'divider' },
 
 ]
+
+const logout = () => {
+  const { location } = window
+  const url = encodeURIComponent(location.href)
+
+  location.href = `//passport.oa.fenqile.com/user/update/logout.html?url=${url}`
+}
 </script>
 
 <template>
@@ -97,7 +85,7 @@ const userProfileList = [
       class="cursor-pointer"
       size="38"
     >
-      <VImg :src="userAvatar"/>
+      <VImg :src="userAvatar" />
 
       <!-- SECTION Menu -->
       <VMenu
@@ -122,7 +110,7 @@ const userProfileList = [
                     color="primary"
                     variant="tonal"
                   >
-                    <VImg :src="avatar1" />
+                    <VImg :src="userAvatar" />
                   </VAvatar>
                 </VBadge>
               </VListItemAction>
@@ -176,7 +164,7 @@ const userProfileList = [
                 block
                 color="error"
                 append-icon="ri-logout-box-r-line"
-                to="/login"
+                @click="logout"
               >
                 登出
               </VBtn>
