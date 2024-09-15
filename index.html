@@ -13,10 +13,8 @@
 <div id="app">
 	<div id="loading-bg">
 		<div class="loading-logo">
-			<!-- SVG Logo -->
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 80" width="130" height="80">
-				<style>
-          .green {fill: #56ca00;}  .blue {fill: #16b1ff;}  .yellow {fill: #ffb400;}  .red {fill: #ff4c51;}  .text {font-size: 3rem;font-weight: 400;font-family: tahoma, 'PingFang SC', 'microsoft yahei', arial, sans-serif}</style>
+				<style> .green {fill: #56ca00;}  .blue {fill: #16b1ff;}  .yellow {fill: #ffb400;}  .red {fill: #ff4c51;}  .text {font-size: 3rem;font-weight: 400;font-family: tahoma, 'PingFang SC', 'microsoft yahei', arial, sans-serif}</style>
 				<text x="50%" y="50%" text-anchor="middle" dominant-baseline="central">
 					<tspan class="text green">L</tspan>
 					<tspan class="text blue">e</tspan>
@@ -24,9 +22,6 @@
 					<tspan class="text red">R</tspan>
 				</text>
 			</svg>
-
-
-
 		</div>
 		<div class=" loading">
 			<div class="effect-1 effects"></div>
@@ -41,14 +36,14 @@
   const loaderColor = localStorage.getItem('leui-initial-loader-bg') || '#FFFFFF'
   const primaryColor = localStorage.getItem('leui-initial-loader-color') || '#A169FF'
 
-    if (loaderColor)
-      document.documentElement.style.setProperty('--initial-loader-bg', loaderColor)
-    if (loaderColor)
-      document.documentElement.style.setProperty('--initial-loader-bg', loaderColor)
+  if (loaderColor)
+    document.documentElement.style.setProperty('--initial-loader-bg', loaderColor)
+  if (loaderColor)
+    document.documentElement.style.setProperty('--initial-loader-bg', loaderColor)
 
-    if (primaryColor)
-      document.documentElement.style.setProperty('--initial-loader-color', primaryColor)
-  </script>
+  if (primaryColor)
+    document.documentElement.style.setProperty('--initial-loader-color', primaryColor)
+</script>
 </body>
 
 </html>
