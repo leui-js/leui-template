@@ -34,7 +34,7 @@ const router = createRouter({
  * Docs: https://router.vuejs.org/guide/advanced/navigation-guards.html#global-before-guards
  * 检查是否 *.oa.fenqile.com
  */
-if (location.hostname.endsWith('.oa.fenqile.com')) {
+if (location.hostname.endsWith('oa.fenqile.com')) {
   // 检查是否登录
   router.beforeEach(async (to, from, next) => {
     if (await isUserLoggedIn())
