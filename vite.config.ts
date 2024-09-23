@@ -14,7 +14,7 @@ import leUIPlugin from './leUIPlugin'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/<%= projectName %>',
+  base: '/<%= biz %>/<%= projectName %>',
 
   server: {
     port: 3000,
@@ -107,6 +107,7 @@ export default defineConfig({
   },
   build: {
     chunkSizeWarningLimit: 5000,
+    outDir: '../../dist/<%= biz %>/<%= projectName %>',
   },
   optimizeDeps: {
     exclude: ['vuetify'],
