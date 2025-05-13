@@ -57,7 +57,6 @@
   "devDependencies": {
     "@antfu/eslint-config-vue": "^0.43.1",
     "@antfu/utils": "^0.7.7",
-    "@fql/lx_report": "^0.0.52",
     "@fullcalendar/core": "^6.1.9",
     "@fullcalendar/daygrid": "^6.1.9",
     "@fullcalendar/interaction": "^6.1.9",
