@@ -5,7 +5,7 @@ import { Skins } from '@core/enums'
 
 // ❗ Logo SVG must be imported with ?raw suffix
 // import logo from '@images/logo.svg?raw'
-import logo from '@images/svg/LeHR.svg?raw'
+import logo from '@images/svg/LeUI.svg?raw'
 
 import { AppContentLayoutNav, ContentWidth, FooterType, NavbarType } from '@layouts/enums'
 
